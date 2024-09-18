@@ -1,3 +1,8 @@
+How to generate PAT - 
+PAT - personal access tokem from git 
+profile icon > settings > Developer settings > Personal access token > Tokens(Classic) 
+click on generate new token > classic > give the name and select all the checkobxes > click generate token 
+
 Git Commands 
 
 git clone <url> - to clone the repo 
