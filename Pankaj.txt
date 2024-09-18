@@ -1,1 +1,11 @@
-My name is pankaj and i am a tutor and i am teaching 
+Git Commands 
+
+git clone <url> - to clone the repo 
+
+PUSH 
+git add <filename>
+git commit -m "<relavent message>"
+git push
+
+PULL 
+git pull 
