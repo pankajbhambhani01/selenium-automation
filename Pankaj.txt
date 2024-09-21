@@ -14,3 +14,14 @@ git push
 
 PULL 
 git pull 
+
+--------------------
+How to create branch 
+
+git branch <branch_name>
+
+how to swtich between branch 
+
+git checkout <branch_name>
+
+--------------------------
