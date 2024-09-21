@@ -40,6 +40,10 @@ git push
 
 ----------------------------------
 
+how to delete a branch 
+
+git branch -d <branch_name>
+
 
 
 
