@@ -25,3 +25,38 @@ how to swtich between branch
 git checkout <branch_name>
 
 --------------------------
+
+how to grab the changes from main branch 
+
+switch to main branch - git checkout main
+git pull (pull the main)
+
+git checkout branch_name 
+git merge main (close ) the window 
+
+git commit -m "merge with main"
+
+git push 
+
+----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
