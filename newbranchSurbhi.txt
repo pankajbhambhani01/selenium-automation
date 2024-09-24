@@ -4,3 +4,4 @@ new file
 updated
 hello
 new change
+good morning
