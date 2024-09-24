@@ -1,3 +1,4 @@
+the program of odd even number.
 public class EvenOddNo {
     public static void main(String[] args) {
         int[] ages = {1, 2, 3, 13, 4, 5};
