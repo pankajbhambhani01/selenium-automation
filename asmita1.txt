@@ -4,5 +4,3 @@ hii
 
 I am created new branch
 =======
-Good morning
->>>>>>> 21391e9f14db99ca43df53abc5fa1ecb6bb5c508
