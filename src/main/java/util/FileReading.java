@@ -8,7 +8,7 @@ public class FileReading {
     public static Properties readFile(String filename){
         Properties p = new Properties();
         try {
-            File f = new File("D:\\Selenium_TestNg_Learning\\src\\test\\resources\\testdata\\" + filename);
+            File f = new File("src\\test\\resources\\testdata\\" + filename);
             FileInputStream fileInputStream = new FileInputStream(f);
 
             p.load(fileInputStream);
