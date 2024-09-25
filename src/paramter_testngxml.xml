@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+    <test name="My Execution Report">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="XYZ" value="PQR"></parameter>
+        <packages>
+            <package name="com.testcases.testng"></package>
+            <!--     <package name="com.testcases.archived"></package>-->
+        </packages>
+    </test> <!-- Selenium_TestNg_Learning -->
+</suite> <!-- Default Suite -->
+
+
+
+

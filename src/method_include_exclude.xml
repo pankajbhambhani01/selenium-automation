@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+  <test name="My Execution Report">
+  <classes>
+      <class name="com.testcases.testng.ClassA">
+          <methods>
+              <include name="testMethod2"/>
+          </methods>
+      </class>
+      <class name="com.testcases.BeforeAfter">
+          <methods>
+              <exclude name="testcase1"></exclude>
+          </methods>
+      </class>
+  </classes>
+  </test> <!-- Selenium_TestNg_Learning -->
+</suite> <!-- Default Suite -->
+
+
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+  <test name="My Execution Report">
+    <classes>
+      <class name="com.testcases.ForgetLoginInfoTC">
+        <methods>
+          <include name="testcase1"/>
+          <include name="testcase2"/>
+        </methods>
+      </class>
+    </classes>
+  </test> <!-- Selenium_TestNg_Learning -->
+</suite> <!-- Default Suite -->
+
+
