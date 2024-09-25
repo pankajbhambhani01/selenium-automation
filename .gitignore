@@ -1,0 +1,6 @@
+.idea/
+OrangeHRMSAutomation.iml
+target/
+test-output/
+resources/ScreenShotes/
+test.txt
