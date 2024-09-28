@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite" thread-count="1" parallel="methods">
+  <listeners>
+    <listener class-name="com.mylistners.Listners"/>
+  </listeners>
+  <test name="My Execution Report">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.testcases.ForgetLoginInfoTC"/>
+    </classes>
+  </test> <!-- Selenium_TestNg_Learning -->
+</suite> <!-- Default Suite -->
