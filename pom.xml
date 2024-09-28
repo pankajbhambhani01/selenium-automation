@@ -7,19 +7,23 @@
     <groupId>org.selenium.auto</groupId>
     <artifactId>selenium_automation</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <selenium-verions>2.53.0</selenium-verions>
+        <testng-version>6.9.4</testng-version>
+    </properties>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.53.0</version>
+            <version>${selenium-verions}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.9.4</version>
+            <version>${testng-version}</version>
         </dependency>
     </dependencies>
 

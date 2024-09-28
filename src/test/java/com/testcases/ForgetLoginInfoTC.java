@@ -24,20 +24,43 @@ public class ForgetLoginInfoTC {
         loginPage = new LoginPage(br.getDriver());
     }
 
-    @Test(testName = "click on forgot login info")
+    @Test(groups = {"functional"}, testName = "click on forgot login info")
     public void testcase1(){
         String formTitle = loginPage.getTitle();
         Assert.assertEquals(formTitle, "Customer Login");
         loginPage.clickForgetInfoLink();
     }
 
-    @Test(testName = "check login works")
+    @Test(groups = {"functional", "sanity"}, testName = "check login works")
     public void testcase2(){
         Properties p = FileReading.readFile("login.properties");
         String formTitle = loginPage.getTitle();
         Assert.assertEquals(formTitle, p.getProperty("title"));
         loginPage.enterUsername(p.getProperty("username"));
         loginPage.enterPassword(p.getProperty("password"));
+    }
+
+    @Test(groups = {"functional", "regression"}, testName = "check login works")
+    public void testcase3(){
+        Properties p = FileReading.readFile("login.properties");
+        String formTitle = loginPage.getTitle();
+        Assert.assertEquals(formTitle, p.getProperty("title"));
+        loginPage.enterUsername(p.getProperty("username"));
+        loginPage.enterPassword(p.getProperty("password"));
+    }
+
+    @Test(groups = {"regression"}, testName = "check login works")
+    public void testcase4(){
+        Properties p = FileReading.readFile("login.properties");
+        String formTitle = loginPage.getTitle();
+        Assert.assertEquals(formTitle, p.getProperty("title"));
+        loginPage.enterUsername(p.getProperty("username"));
+        loginPage.enterPassword(p.getProperty("password"));
+    }
+
+    @Test(dependsOnMethods = "testcase4", groups = {"regression"})
+    public void testcase00(){
+        System.out.println("In to test case 5");
     }
 
     @AfterMethod
@@ -47,4 +70,7 @@ public class ForgetLoginInfoTC {
 
 }
 
+//CI/CD - Continious integreration / continious development - pipelines - jenkins
+// depends on method -> first the required method will run then the dependendt method will run if the primary method fails then the dependent method will not execute
+// depends on group -> it will always run post that group
 // TestNg xml -
