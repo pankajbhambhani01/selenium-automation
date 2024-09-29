@@ -1,4 +1,4 @@
-the pojo file of parabankTc:-
+*the pojo file of parabankTc:-
 
 package com.pageobjects.parabank;
 import org.openqa.selenium.WebDriver;
