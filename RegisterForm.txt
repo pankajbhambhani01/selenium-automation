@@ -49,6 +49,10 @@ public class RegisterForm {
     @FindBy(className = "button")
     private WebElement eleRegisterButton;
 
+    @FindBy(xpath = "//li[@class=\"contact\"]")
+    private WebElement eleContact;
+
+
     public RegisterForm(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
@@ -107,5 +111,9 @@ public class RegisterForm {
     public void clickRegisterButton() {
         eleRegisterButton.click();
         Reporter.log("The Register Button is clicked");
+    }
+   public void clickContactButton() {
+        eleContact.click();
+        Reporter.log("The contact Button is clicked");
     }
     }
