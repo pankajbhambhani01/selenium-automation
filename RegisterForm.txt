@@ -113,8 +113,5 @@ public class RegisterForm
         eleRegisterButton.click();
         Reporter.log("The Register Button is clicked");
     }
-   public void clickContactButton() {
-        eleContact.click();
-        Reporter.log("The contact Button is clicked");
-    }
+ 
     }
