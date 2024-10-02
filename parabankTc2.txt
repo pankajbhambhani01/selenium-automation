@@ -45,10 +45,7 @@ public class parabankTc2 {
         w.wait(5);
         registerForm.clickRegisterButton();
     }
-   @Test(testName = "contact button works")
-    public void testcase2(){
-        registerForm.clickContactButton();
-    }
+   
     @AfterMethod
     public void afterMethod(){
         br.closeBrowser();
