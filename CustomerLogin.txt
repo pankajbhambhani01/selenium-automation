@@ -1,0 +1,44 @@
+package com.pageobjects.parabank;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+
+public class CustomerLogin {
+
+    private WebDriver driver;
+
+    @FindBy(name = "username")
+    private WebElement eleUsername;
+
+    @FindBy(name = "password")
+    private WebElement elePassword;
+
+    @FindBy(tagName = "h2")
+    private WebElement eleFormTitle;
+
+    @FindBy(xpath = "//div[@class='login']//input[@class='button']")
+    private WebElement eleLoginButton;
+
+    public CustomerLogin(WebDriver driver){
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
+    }
+    public String getTitle(){
+        return eleFormTitle.getText();
+    }
+    public void enterUsername(String username){
+        eleUsername.sendKeys(username);
+        Reporter.log("The Username is entered sucessfully " +username);
+    }
+    public void enterPassword(String passowrd){
+        elePassword.sendKeys(passowrd);
+        Reporter.log("The password is entered sucessfully " +passowrd);
+    }
+    public void clickLoginButton(){
+        eleLoginButton.click();
+        Reporter.log("The Login Button clicked sucessfully ");
+    }
+}
