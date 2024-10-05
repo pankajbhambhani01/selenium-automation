@@ -47,12 +47,8 @@ public class RegisterForm
     @FindBy(name = "repeatedPassword")
     private WebElement eleconfirm;
 
-    @FindBy(className = "button")
+    @FindBy(xpath = "//input[@value='Register']")
     private WebElement eleRegisterButton;
-
-    @FindBy(xpath = "//li[@class=\"contact\"]")
-    private WebElement eleContact;
-
 
     public RegisterForm(WebDriver driver)
     {
