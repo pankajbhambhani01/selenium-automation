@@ -27,11 +27,11 @@ public class parabankTc2 {
         registerForm =new RegisterForm(br.getDriver());
     }
     @Test(testName = "register Link works")
-    public void testcase(){
+    public void testcase1(){
         w=new Wait();
         registerForm.enterRegisterLink();
-        registerForm.enterFirstname("Asmita");
-        registerForm.enterLastname("Patil");
+        registerForm.enterFirstname("gita");
+        registerForm.enterLastname("more");
         registerForm.enterAddress("ram nagar");
         registerForm.enterCity("dhule");
         registerForm.enterState("Maharashtra");
@@ -44,8 +44,9 @@ public class parabankTc2 {
         registerForm.enterConfirmPassword(p.getProperty("password"));
         w.wait(5);
         registerForm.clickRegisterButton();
+        w.wait(3);
     }
-   
+
     @AfterMethod
     public void afterMethod(){
         br.closeBrowser();
