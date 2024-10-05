@@ -1,0 +1,47 @@
+package com.testcases.testng;
+
+import com.pageobjects.parabank.CustomerCare;
+import com.pageobjects.parabank.RegisterForm;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import util.Browser;
+import util.FileReading;
+import util.Wait;
+
+import java.util.Properties;
+
+public class ParabankCustomerTc3 {
+    Browser br;
+    CustomerCare customerCare;
+    Wait w;
+
+    @BeforeMethod
+    public void beforeMethod() {
+        br = new Browser();
+        w = new Wait();
+        Properties p = FileReading.readFile("config.properties");
+        br.lounchBrowser(p.getProperty("browser"));
+        br.maximize();
+        br.navigateUrl(p.getProperty("url"));
+        customerCare = new CustomerCare(br.getDriver());
+    }
+    @Test(testName = "Contact Icon works")
+    public void testCase() {
+        w.wait(3);
+        customerCare.clickContactIcon();
+        w.wait(3);
+        customerCare.customerFormTitle();
+        customerCare.enterCustomerName("gita more");
+        customerCare.enterCustomerEmail("gitamore123@gmail.com");
+        customerCare.enterCustomerPhone("9489786574");
+        customerCare.enterCustomerMessage("asddd asdsd adsd adsd");
+        w.wait(3);
+        customerCare.clickSendToCustomerCareButton();
+        w.wait(3);
+    }
+    @AfterMethod
+    public void afterMethod(){
+        br.closeBrowser();
+    }
+    }
