@@ -1,0 +1,48 @@
+package com.testcases.testng;
+
+import com.pageobjects.parabank.CustomerLogin;
+import com.pageobjects.parabank.LoginPage;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import util.Browser;
+import util.FileReading;
+import util.Wait;
+
+import java.util.Properties;
+
+public class ParabankCustomerLoginTC1 {
+    Browser br;
+    Wait w;
+    CustomerLogin customerLogin ;
+
+    @BeforeMethod
+    public void beforeMethod(){
+        br = new Browser();
+        w=new Wait();
+        Properties p = FileReading.readFile("config.properties");
+        br.lounchBrowser(p.getProperty("browser"));
+        br.maximize();
+        br.navigateUrl(p.getProperty("url"));
+        customerLogin = new CustomerLogin(br.getDriver());
+    }
+
+    @Test(testName = "check login works")
+    public void testcase2(){
+        String eleFormTitle = customerLogin.getTitle();
+        Assert.assertEquals(eleFormTitle,"Customer Login");
+        customerLogin.getTitle();
+        System.out.println("Title is " +eleFormTitle);
+        Properties p = FileReading.readFile("login.properties");
+        customerLogin.enterUsername(p.getProperty("username"));
+        customerLogin.enterPassword(p.getProperty("password"));
+        w.wait(3);
+        customerLogin.clickLoginButton();
+        w.wait(3);
+    }
+    @AfterMethod
+    public void afterMethod(){
+        br.closeBrowser();
+    }
+}
