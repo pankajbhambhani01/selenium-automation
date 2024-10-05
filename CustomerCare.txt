@@ -1,0 +1,75 @@
+package com.pageobjects.parabank;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+public class CustomerCare {
+    private WebDriver driver;
+
+    @FindBy(className = "contact")
+    private WebElement elecontact;
+
+    @FindBy(tagName = "h1")
+    private WebElement elecustomerformTitle;
+
+    @FindBy(xpath = "//input[@name='name']")
+    private WebElement elecustomerName;
+
+    @FindBy(xpath = "//input[@id='email']")
+    private WebElement eleElecustomerImail;
+
+    @FindBy(xpath = "//input[@id='phone']")
+    private WebElement elecustomerPhone;
+
+    @FindBy(xpath = "//textarea[@id='message']")
+    private WebElement elecustomerMessage;
+
+    @FindBy(xpath = "//*[@value='Send to Customer Care']")
+    private WebElement sendButtom;
+
+    public CustomerCare(WebDriver driver){
+        PageFactory.initElements(driver,this);
+        this.driver=driver;
+    }
+
+    public void clickContactIcon(){
+        elecontact.click();
+        Reporter.log("The Contact Icon is clicked");
+    }
+    public void customerFormTitle()
+    {
+        String formTitle=elecustomerformTitle.getText();
+        if(formTitle.equals("Customer Care")) {
+            System.out.println("The Form Title is Customer Care");
+        }else{
+            System.out.println("my testcase is failed title not matched");
+        }
+        Reporter.log("The Form title is print");
+    }
+    public void enterCustomerName(String name){
+        elecustomerName.sendKeys(name);
+            Reporter.log("The Name is entered sucessfully" +elecustomerName);
+    }
+    public void enterCustomerEmail(String email){
+        eleElecustomerImail.sendKeys(email);
+        Reporter.log("The Email is entered sucessfully" +eleElecustomerImail);
+    }
+    public void enterCustomerPhone(String phone){
+        elecustomerPhone.sendKeys(phone);
+        Reporter.log("The Email is entered sucessfully" +elecustomerPhone);
+    }
+    public void enterCustomerMessage(String message){
+        elecustomerMessage.sendKeys(message);
+        Reporter.log("The Email is entered sucessfully" +elecustomerMessage);
+    }
+
+    public void clickSendToCustomerCareButton() {
+        sendButtom.click();
+        Reporter.log("The Send to Customer Care Button is clicked");
+    }
+
+}
