@@ -1,0 +1,55 @@
+package com.testcases.testng;
+
+import com.pageobjects.parabank.AdminPage;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import util.Browser;
+import util.FileReading;
+import util.Wait;
+
+import java.util.Properties;
+
+public class ParabankAdminPgTc4{
+    Browser br;
+    Wait w;
+    AdminPage adminPage;
+
+    @BeforeMethod
+    public void beforeMethod(){
+        br = new Browser();
+        w=new Wait();
+        Properties p = FileReading.readFile("config.properties");
+        br.lounchBrowser(p.getProperty("browser"));
+        br.maximize();
+        br.navigateUrl(p.getProperty("url"));
+        adminPage = new AdminPage(br.getDriver());
+    }
+
+    @Test(testName = "check Admin Link works")
+    public void testcase(){
+        adminPage.clickAdminPage();
+        w.wait(3);
+        adminPage.clickinItiaizeButton();
+        w.wait(3);
+        adminPage.clickCleanButton();
+        //w.wait(3);
+        //adminPage.shutdown();
+      //  w.wait(3);
+//        adminPage.cliclStartUpButton();
+//        w.wait(3);
+        adminPage.clickSoapRaadioButton();
+        w.wait(3);
+        adminPage.loanProviderdropdown();
+        w.wait(3);
+        adminPage.loanProcessordropdown();
+        w.wait(5);
+        adminPage.clickSubmitButton();
+        w.wait(4);
+    }
+    @AfterMethod
+    public void afterMethod(){
+        br.closeBrowser();
+    }
+}
