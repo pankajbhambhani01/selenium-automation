@@ -47,6 +47,8 @@ public class ParabankAdminPgTc4{
         w.wait(5);
         adminPage.clickSubmitButton();
         w.wait(4);
+        adminPage.clickHomeButton();
+        w.wait(4);
     }
     @AfterMethod
     public void afterMethod(){
