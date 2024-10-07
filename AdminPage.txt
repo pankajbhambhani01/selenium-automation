@@ -37,6 +37,9 @@ public class AdminPage {
     @FindBy(xpath = "//input[@value='Submit']")
     private WebElement submit;
 
+    @FindBy(xpath = "//a[text()='home']")
+    private WebElement homepage;
+
     public AdminPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
@@ -84,5 +87,9 @@ public class AdminPage {
     public void clickSubmitButton(){
         submit.click();
         Reporter.log("The submit Button is clicked");
+    }
+    public void clickHomeButton(){
+        homepage.click();
+        Reporter.log("The Home page icon is clicked");
     }
 }
