@@ -1,0 +1,88 @@
+package com.pageobjects.parabank;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
+
+public class AdminPage {
+    private WebDriver driver;
+
+    @FindBy(xpath = "//a[text()='Admin Page']")
+    private WebElement adminpg;
+
+    @FindBy(xpath = "//button[@value='INIT']")
+    private WebElement initiaize;
+
+    @FindBy(xpath = "//button[@value='CLEAN']")
+    private WebElement clean;
+
+    @FindBy(xpath = "//input[@value='Shutdown']")
+    private WebElement shutdown;
+
+//    @FindBy(xpath = "//input[@value='Startup']")
+//    private WebElement startUp;
+
+    @FindBy(id = "accessMode1")
+    private WebElement soap;
+
+    @FindBy(name = "loanProvider")
+    private WebElement dropdown1;
+
+    @FindBy(id = "loanProcessor")
+    private WebElement dropdown2;
+
+    @FindBy(xpath = "//input[@value='Submit']")
+    private WebElement submit;
+
+    public AdminPage(WebDriver driver)
+    {
+        PageFactory.initElements(driver,this);
+        this.driver=driver;
+    }
+    public void clickAdminPage(){
+        adminpg.click();
+        Reporter.log("The Admin link is clicked");
+    }
+    public void clickinItiaizeButton(){
+        initiaize.click();
+        Reporter.log("The initialize Button is clicked");
+    }
+    public void clickCleanButton(){
+        clean.click();
+        Reporter.log("The Clean Button is clicked");
+    }
+    public void shutdown(){
+        shutdown.click();
+        Reporter.log("The shutdown Button is clicked");
+    }
+//    public void cliclStartUpButton(){
+//        startUp.click();
+//        Reporter.log("The StartUp Button is clicked");
+//    }
+    public void clickSoapRaadioButton(){
+          soap.click();
+      }
+      public void loanProviderdropdown(){
+          Select s = new Select(dropdown1);
+          s.selectByIndex(0);
+          s.selectByValue("local");
+          s.selectByVisibleText("Web Service");
+         WebElement option = s.getFirstSelectedOption();
+         System.out.println("The selected option is: " +option.getText());
+      }
+    public void loanProcessordropdown(){
+        Select s = new Select(dropdown2);
+        s.selectByValue("down");
+        s.selectByVisibleText("Combined");
+        s.selectByIndex(0);
+        WebElement option = s.getFirstSelectedOption();
+        System.out.println("The selected option is: " +option.getText());
+    }
+    public void clickSubmitButton(){
+        submit.click();
+        Reporter.log("The submit Button is clicked");
+    }
+}
